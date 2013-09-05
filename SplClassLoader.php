@@ -5,6 +5,7 @@
  * standards for PHP 5.3 namespaces and class names.
  *
  * https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+ * https://github.com/keradus/SplClassLoader
  *
  *     // Example which loads classes for the Doctrine Common package in the
  *     // Doctrine\Common namespace.
@@ -16,6 +17,7 @@
  * @author Matthew Weier O'Phinney <matthew@zend.com>
  * @author Kris Wallsmith <kris.wallsmith@gmail.com>
  * @author Fabien Potencier <fabien.potencier@symfony-project.org>
+ * @author Dariusz Ruminski <dariusz.ruminski@gmail.com>
  */
 class SplClassLoader
 {
