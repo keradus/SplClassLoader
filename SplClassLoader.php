@@ -23,6 +23,7 @@ class SplClassLoader
     private $_namespace;
     private $_includePath;
     private $_namespaceSeparator = '\\';
+    public $debug = false;
 
     /**
      * Creates a new <tt>SplClassLoader</tt> that loads classes of the
@@ -116,10 +117,18 @@ class SplClassLoader
      * Loads the given class or interface.
      *
      * @param string $className The name of the class to load.
-     * @return void
+     * @return bool whether the loading was successful
      */
     public function loadClass($className)
     {
+        if ($this->debug) {
+            var_dump("loadClass ($this->_namespace) $className");
+        }
+
+        if ($className[0] === "\\") {
+            $className = substr ($className, 1);
+        }
+
         if (null === $this->_namespace || $this->_namespace.$this->_namespaceSeparator === substr($className, 0, strlen($this->_namespace.$this->_namespaceSeparator))) {
             $fileName = '';
             $namespace = '';
@@ -129,8 +138,26 @@ class SplClassLoader
                 $fileName = str_replace($this->_namespaceSeparator, DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
             }
             $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . $this->_fileExtension;
+            $filePathName = ($this->_includePath !== null ? $this->_includePath . DIRECTORY_SEPARATOR : '') . $fileName;
 
-            require ($this->_includePath !== null ? $this->_includePath . DIRECTORY_SEPARATOR : '') . $fileName;
+            if ($this->debug) {
+                var_dump("loading ($this->_namespace) $filePathName ...");
+            }
+
+            if (file_exists($filePathName)) {
+                include $filePathName;
+                $loaded = true;
+            } else {
+                $loaded = false;
+            }
+
+            if ($this->debug) {
+                var_dump("loading ($this->_namespace) $filePathName " . ($loaded ? "OK" : "ERR"));
+            }
+
+            return $loaded;
         }
+
+        return false;
     }
 }
