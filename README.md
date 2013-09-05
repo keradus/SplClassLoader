@@ -1,7 +1,7 @@
 SplClassLoader
 ==============
 
-SplClassLoader implementstion based on https://gist.github.com/jwage/221634
+SplClassLoader implementation based on https://gist.github.com/jwage/221634
 
 ChangeLog:
 - add debug mode
