@@ -32,6 +32,7 @@ class SplClassLoader
      * specified namespace.
      *
      * @param string $ns The namespace to use.
+     * @param string $includePath The include path for all class files in the namespace.
      */
     public function __construct($ns = null, $includePath = null)
     {
@@ -52,7 +53,7 @@ class SplClassLoader
     /**
      * Gets the namespace seperator used by classes in the namespace of this class loader.
      *
-     * @return void
+     * @return string $_namespaceSeparator
      */
     public function getNamespaceSeparator()
     {
