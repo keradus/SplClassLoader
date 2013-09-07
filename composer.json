@@ -1,0 +1,32 @@
+{
+    "name": "keradus/spl-class-loader",
+    "description": "SplClassLoader based on https://gist.github.com/jwage/221634",
+    "type": "library",
+    "homepage": "https://github.com/keradus/SplClassLoader",
+    "authors": [
+        {
+            "name": "Jonathan H. Wage",
+            "email": "jonwage@gmail.com"
+        },
+        {
+            "name": "Roman S. Borschel",
+            "email": "roman@code-factory.org"
+        },
+        {
+            "name": "Matthew Weier O'Phinney",
+            "email": "matthew@zend.com"
+        },
+        {
+            "name": "Kris Wallsmith",
+            "email": "kris.wallsmith@gmail.com"
+        },
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien.potencier@symfony-project.org"
+        },
+        {
+            "name": "Dariusz Rumiński",
+            "email": "dariusz.ruminski@gmail.com"
+        }
+    ]
+}
