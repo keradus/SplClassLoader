@@ -31,7 +31,7 @@ class SplClassLoader
      * Creates a new <tt>SplClassLoader</tt> that loads classes of the
      * specified namespace.
      *
-     * @param string $ns The namespace to use.
+     * @param string $ns          The namespace to use.
      * @param string $includePath The include path for all class files in the namespace.
      */
     public function __construct($ns = null, $includePath = null)
@@ -51,7 +51,7 @@ class SplClassLoader
     }
 
     /**
-     * Gets the namespace seperator used by classes in the namespace of this class loader.
+     * Gets the namespace separator used by classes in the namespace of this class loader.
      *
      * @return string $_namespaceSeparator
      */
@@ -119,8 +119,8 @@ class SplClassLoader
     /**
      * Loads the given class or interface.
      *
-     * @param string $className The name of the class to load.
-     * @return bool whether the loading was successful
+     * @param  string $className The name of the class to load.
+     * @return bool   whether the loading was successful
      */
     public function loadClass($className)
     {
